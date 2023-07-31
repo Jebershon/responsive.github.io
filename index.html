@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            display: flex;
+            color: brown;
+            background-color: black;
+            text-decoration: solid;
+            padding: 15px;
+            margin: 0px;
+            border: 1px;
+        }
+        .bg{
+            background-color: grey;
+        }
+        .tab{
+            width: 100%;
+            height: 5%;
+            margin: 1px;
+            border-style: solid;
+            float: right;
+            background-color: black;
+            color: crimson;
+        }
+        .cab{
+            padding: 10px;
+            margin: 5px;
+        }
+        .btn{
+            color: brown;
+            background-color: black;
+            font-size: medium;
+            border-radius: 10px;
+            width: 2cm;
+            float: right;
+        }
+        .btn:hover{
+            background-color: gray;
+        }
+        .outbg{
+            width: 100%;
+            height: 5%;
+            margin: 1px;
+            border-style: solid;
+            float: right;
+            background-color: black;
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        function getcolor()
+        {
+            var b = document.getElementById("picker").value;
+            console.log(b);
+            document.body.style.backgroundColor=b;
+        }
+        function getdata()
+        {
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var ph=document.getElementById("ph").value;
+            var count=ph.toString().length;
+            if(count<10)
+            {
+                window.alert("the number is not valid");
+            }
+            document.getElementById("n").innerHTML=name;
+            document.getElementById("e").innerHTML=email;
+            document.getElementById("p").innerHTML=ph;
+        }
+    </script>
+</head>
+<body class="bg">
+    <div>
+        <header><h2>Interactive Page</h2></header>
+    </div>
+    <div class="cab">
+    <div>
+        <label>Select the color:</label>
+        <input type="color" id="picker"></input>
+        <input class="btn" type="button" onclick="getcolor()" value="submit"></input>
+        </form>
+    </div>
+    <br>
+    <div class="tab">
+        <h4>Enter user details:</h4>
+        <form>
+            <table>
+        <tr>
+            <td><label>Name:</label></td>
+            <td><input type="text" id="name"></input></td>
+        </tr>
+        <tr>
+            <td><label>Number:</label></td>
+            <td><input type="number" id="ph"></input></td>
+        </tr>
+        <tr>
+            <td><label>Email:</label></td>
+            <td><input type="email" id="email"></input></td>
+        </tr>
+        <tr>
+            <td><button onclick="getdata()" type="button">Submit</button></td>
+            <td><button type="reset">reset</button></td>
+        </tr>
+        </table>
+        </form>
+        </div>
+        <div class="outbg">
+        <h4>User Details:</h4>
+        <table border="1">
+            <tr>
+                <th>Name:</th>
+                <th>Email:</th>
+                <th>Ph.no:</th>
+            </tr>
+            <tr>
+                <td id="n"></td>
+                <td id="e"></td>
+                <td id="p"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+</body>
+</html>
